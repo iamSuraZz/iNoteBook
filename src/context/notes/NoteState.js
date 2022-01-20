@@ -2,22 +2,63 @@ import NoteContext from "./noteContext";
 import { useState } from "react";
 
 export const NoteState = (props)=>{
-    const s1 = {
-        "name": "Suraj",
-        "branch": "CSE"
-    }
-    const [state, setState] = useState(s1);
 
-    const update = ()=>{
-        setTimeout(() => {
-            setState({
-                "name": "Samuel",
-                "branch": "CSIT"
-            })
-        }, 1000);
-    }
+    const notesInitial = [
+        {
+          "_id": "61e3e022d1ce6668f51c20df",
+          "user": "61de9abc9d7e1162172b3b3d",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "Personal",
+          "date": "2022-01-16T09:06:42.002Z",
+          "__v": 0
+        },{
+          "_id": "61e3e022d1ce6668f51c20df",
+          "user": "61de9abc9d7e1162172b3b3d",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "Personal",
+          "date": "2022-01-16T09:06:42.002Z",
+          "__v": 0
+        },{
+          "_id": "61e3e022d1ce6668f51c20df",
+          "user": "61de9abc9d7e1162172b3b3d",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "Personal",
+          "date": "2022-01-16T09:06:42.002Z",
+          "__v": 0
+        },{
+          "_id": "61e3e022d1ce6668f51c20df",
+          "user": "61de9abc9d7e1162172b3b3d",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "Personal",
+          "date": "2022-01-16T09:06:42.002Z",
+          "__v": 0
+        },{
+          "_id": "61e3e022d1ce6668f51c20df",
+          "user": "61de9abc9d7e1162172b3b3d",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "Personal",
+          "date": "2022-01-16T09:06:42.002Z",
+          "__v": 0
+        },{
+          "_id": "61e3e022d1ce6668f51c20df",
+          "user": "61de9abc9d7e1162172b3b3d",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "Personal",
+          "date": "2022-01-16T09:06:42.002Z",
+          "__v": 0
+        }
+      ]
+
+      const[notes, setNotes] = useState(notesInitial)
+   
     return (
-        <NoteContext.Provider value={{state:state, update:update}}>
+        <NoteContext.Provider value={{notes, setNotes}}>
             {props.children}
         </NoteContext.Provider>
     )
