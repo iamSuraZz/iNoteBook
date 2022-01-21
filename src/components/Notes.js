@@ -6,10 +6,11 @@ import Noteitem from './Noteitem';
 export const Notes = () => {
     
   const context = useContext(noteContext);
-  const { notes, addNote } = context;
+  const { notes} = context;
 
   return (
     <>
+    <AddNote />
     <div className="row my-3">
     <h1>Your notes.</h1>
     {notes.map ((note)=>{
