@@ -34,7 +34,7 @@ const Notes = () => {
     return (
         <>
         <AddNote/>
-        <button ref={ref} type="button" className="btn btn-primary d-none" data-toggle="modal" data-target="#exampleModal">
+        <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
 </button>
 
@@ -43,7 +43,7 @@ const Notes = () => {
     <div className="modal-content">
       <div className="modal-header">
         <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+        <button style={{'borderRadius':'20%'}} type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -93,7 +93,7 @@ const Notes = () => {
       </form>
       </div>
       <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
       </div>
     </div>
