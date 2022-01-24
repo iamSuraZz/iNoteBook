@@ -44,7 +44,7 @@ const Notes = () => {
   <div className="modal-dialog" role="document">
     <div className="modal-content">
       <div className="modal-header">
-        <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 className="modal-title" id="exampleModalLabel">Edit Note</h5>
         <button style={{'borderRadius':'20%'}} type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -61,7 +61,7 @@ const Notes = () => {
             id="etitle"
             name="etitle" value={note.etitle}
             aria-describedby="emailHelp"
-            onChange={onChange}
+            onChange={onChange}  required
           />
         </div>
         <div className="mb-3">
@@ -73,7 +73,7 @@ const Notes = () => {
             className="form-control"
             id="edescription"
             name="edescription" value={note.edescription}
-            onChange={onChange}
+            onChange={onChange}  required
           />
         </div>
         
@@ -95,14 +95,16 @@ const Notes = () => {
       </form>
       </div>
       <div className="modal-footer">
-        <button ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
+        <button  ref={refClose} type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button disabled={ note.etitle.length < 4 || note.edescription.length < 5} onClick={handleClick} type="button" className="btn btn-primary">Update Note</button>
       </div>
     </div>
   </div>
 </div>
         <div className="row my-3">
-            <h2>You Notes</h2> 
+            <h2>You Notes </h2> 
+            <div className="container mx-2">
+            { notes.length === 0 && 'No notes to display'}</div>
             {notes.map((note)=>{
                 return <Noteitem key={note._id} updateNote={updateNote} note={note}/>  
             })}
